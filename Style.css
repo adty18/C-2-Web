@@ -1,3 +1,8 @@
 .brightness-50 {
-    filter: brightness(40%); /* Change the brightness value to your preference */
-  }
+    filter: brightness(40%);
+    /* Change the brightness value to your preference */
+}
+body{
+    margin: 0;
+    padding: 0;
+}
