@@ -558,7 +558,7 @@ video {
       @apply py-1.5 px-3 text-center bg-blue-700 rounded-md text-white;
   } */
 
-.brightness-50 {
-  filter: brightness(50%);
+.brightness-30 {
+  filter: brightness(30%);
   /* Change the brightness value to your preference */
 }
