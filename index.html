@@ -12,71 +12,118 @@
   <!-- ... -->
   <link rel="stylesheet" href="src/output.css">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>My Website</title>
 </head>
 
 <body>
-<!-- component -->
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
-  <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-    <div class="p-4 flex flex-row items-center justify-between">
-      <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">INNOVEXXA</a>
-      <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-          <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-          <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-        </svg>
-      </button>
-    </div>
-    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-      <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-blue-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-blue-400 focus:bg-blue-800focus:outline-none focus:shadow-outline" href="#">Home</a>
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="Team-page/Team.html">Team</a>
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
-      <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Contact</a>
-      <div @click.away="open = false" class="relative" x-data="{ open: false }">
-        <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-
-        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
-          </div>
-        </div>
-      </div>    
-    </nav>
-  </div>
-</div>
- 
-  
-  
-
-    <section class="bg-cover bg-center h-screen flex items-center relative" id="hero-section">
-      <video autoplay muted loop playsinline class="absolute inset-0 object-cover w-full h-full brightness-30">
-        <source src="assets/Kelompok 6_Es krim.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="container mx-auto text-center z-10">
-        <h1 class="text-2xl text-white font-bold mb-5 md:text-6xl">Welcome to XI-C2 Class Website</h1>
-        <p class="text-1xl text-gray-300 mb-8 md:text-2xl">"Tumbuh Bersama, Belajar Bersama, Menyemai Harapan, Mewujudkan Prestasi,
-          dan Menciptakan Kenangan Abadi dalam Setiap Langkah Kita".</p>
-        <a href="#services"
-          class="bg-blue-500 text-white py-3 px-5 rounded-lg inline-block hover:bg-blue-600 transition-colors">Explore
-          Menu</a>
+  <!-- component -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+    <div x-data="{ open: false }"
+      class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div class="p-4 flex flex-row items-center justify-between">
+        <a href="#"
+          class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">INNOVEXXA</a>
+        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
       </div>
-    </section>
+      <nav :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-blue-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-blue-400 focus:bg-blue-800focus:outline-none focus:shadow-outline"
+          href="#">Home</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="Team-page/Team.html">Team</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="#">About</a>
+        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="#">Contact</a>
+        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+
+            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#">Link #1</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#">Link #2</a>
+                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#">Link #3</a>
+              </div>
+            </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+
+
+  <section class="bg-cover bg-center h-screen flex items-center relative" id="hero-section">
+    <video autoplay muted loop playsinline class="absolute inset-0 object-cover w-full h-full brightness-30">
+      <source src="assets/Kelompok 6_Es krim.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="container mx-auto text-center z-10">
+      <h1 class="text-2xl text-white font-bold mb-5 md:text-6xl">Welcome to XI-C2 Class Website</h1>
+      <p class="text-1xl text-gray-300 mb-8 md:text-2xl">"Tumbuh Bersama, Belajar Bersama, Menyemai Harapan, Mewujudkan
+        Prestasi,
+        dan Menciptakan Kenangan Abadi dalam Setiap Langkah Kita".</p>
+      <a href="#about"
+        class="bg-blue-500 text-white py-3 px-5 rounded-lg inline-block hover:bg-blue-600 transition-colors">Click Me</a>
+    </div>
+  </section>
+
+
+
+
+  <div id="about" class="sm:flex items-center max-w-screen-xl">
+    <div class="sm:w-1/2 p-10">
+      <div class="image object-center text-center">
+        <img src="/assets/about sec.png">
+      </div>
+    </div>
+    <div class="sm:w-1/2 p-5">
+      <div class="text">
+        <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">About us</span>
+        <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">About <span class="text-indigo-600">Our Website</span>
+        </h2>
+        <p class="text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi
+          doloremque, fugiat illum magni minus nisi nulla numquam obcaecati placeat quia, repellat tempore
+          voluptatum.
+        </p>
+      </div>
+    </div>
+  </div>
   </div>
   <!-- Your content here -->
   </div>
+
   <section id="services" class="my-20">
     <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-16">PROFILE</h2>
+      <h2 class="text-4xl font-bold mb-16">INSTRUCTOR</h2>
     </div>
     <div class="flex flex-wrap">
       <!-- Repeat this container for each service -->
-      <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm mx-auto w-70 h-30 border-2 mb-5 md:text-2xl md:w-96 md:h-50">
+      <div
+        class="bg-white rounded-lg shadow-lg p-6 max-w-sm mx-auto w-70 h-30 border-2 mb-5 md:text-2xl md:w-96 md:h-50">
         <div class="relative">
           <img class="w-20 h-20 rounded-full mx-auto md:w-36 md:h-36" src="assets/b defi.png" alt="Profile Pic">
         </div>
@@ -84,44 +131,49 @@
         <p class="text-center text-gray-600">Wali Kelas</p>
         <div class="flex justify-center mt-6">
 
-          <button class="bg-indigo-500 text-white text-sm rounded-md px-3 py-2 hover:bg-gray-700 transition md:text-xl md:py-3 md:px-5" onclick="openModal('modelConfirm')">
+          <button
+            class="bg-indigo-500 text-white text-sm rounded-md px-3 py-2 hover:bg-gray-700 transition md:text-xl md:py-3 md:px-5"
+            onclick="openModal('modelConfirm')">
             MORE
           </button>
         </div>
-       
-       <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
-           <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
-       
-               <div class="flex justify-end p-2">
-                   <button onclick="closeModal('modelConfirm')" type="button"
-                       class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd"
-                               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                               clip-rule="evenodd"></path>
-                       </svg>
-                   </button>
-               </div>
-       
-               <div class="p-6 pt-0 text-center">
-                   <svg class="w-10 md:w-20 h-10 md:h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                       xmlns="http://www.w3.org/2000/svg">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                           d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                   </svg>
-                   <h3 class="text-sm md:text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to close this user?</h3>
-                   <a href="#services"  onclick="closeModal('modelConfirm')"
-                       class="text-white text-sm md:text-xl bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg inline-flex items-center px-2 py-2 text-center mr-2">
-                       Close
-                   </a>
-               </div>
-       
-           </div>
-       </div>
-       
-      
+
+        <div id="modelConfirm"
+          class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+          <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+
+            <div class="flex justify-end p-2">
+              <button onclick="closeModal('modelConfirm')" type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="p-6 pt-0 text-center">
+              <svg class="w-10 md:w-20 h-10 md:h-20 text-red-600 mx-auto" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h3 class="text-sm md:text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to close this
+                user?</h3>
+              <a href="#services" onclick="closeModal('modelConfirm')"
+                class="text-white text-sm md:text-xl bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg inline-flex items-center px-2 py-2 text-center mr-2">
+                Close
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
-      <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm mx-auto w-70 h-30 border-2 mb-5 md:text-2xl md:w-96 md:h-50">
+      <div
+        class="bg-white rounded-lg shadow-lg p-6 max-w-sm mx-auto w-70 h-30 border-2 mb-5 md:text-2xl md:w-96 md:h-50">
         <div class="relative">
           <img class="w-20 h-20 rounded-full mx-auto md:w-36 md:h-36" src="assets/pk lukman.png" alt="Profile Pic">
         </div>
@@ -129,75 +181,79 @@
         <p class="text-center text-gray-600">Pendamping P5</p>
         <div class="flex justify-center mt-6">
 
-          <button class="bg-indigo-500 text-white text-sm rounded-md px-3 py-2 hover:bg-gray-700 transition md:text-xl md:py-3 md:px-5" onclick="openModal('modelConfirm')">
+          <button
+            class="bg-indigo-500 text-white text-sm rounded-md px-3 py-2 hover:bg-gray-700 transition md:text-xl md:py-3 md:px-5"
+            onclick="openModal('modelConfirm')">
             MORE
           </button>
         </div>
-       
-       <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
-           <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
-       
-               <div class="flex justify-end p-2">
-                   <button onclick="closeModal('modelConfirm')" type="button"
-                       class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd"
-                               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                               clip-rule="evenodd"></path>
-                       </svg>
-                   </button>
-               </div>
-       
-               <div class="p-6 pt-0 text-center">
-                   <svg class="w-10 md:w-20 h-10 md:h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                       xmlns="http://www.w3.org/2000/svg">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                           d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                   </svg>
-                   <h3 class="text-sm md:text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to close this user?</h3>
-                   <a href="#services"  onclick="closeModal('modelConfirm')"
-                       class="text-white text-sm md:text-xl bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg inline-flex items-center px-2 py-2 text-center mr-2">
-                       Close
-                   </a>
-               </div>
-       
-           </div>
-       </div>
-       
-      
-      </div>
-      </div>
-    </div>
-    </div>
-  </div>
-  </section>
- <!-- End Hero -->
- 
- <script type="text/javascript">
-     window.openModal = function(modalId) {
-         document.getElementById(modalId).style.display = 'block'
-         document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
-     }
- 
-     window.closeModal = function(modalId) {
-         document.getElementById(modalId).style.display = 'none'
-         document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
-     }
- 
-     // Close all modals when press ESC
-     document.onkeydown = function(event) {
-         event = event || window.event;
-         if (event.keyCode === 27) {
-             document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
-             let modals = document.getElementsByClassName('modal');
-             Array.prototype.slice.call(modals).forEach(i => {
-                 i.style.display = 'none'
-             })
-         }
-     };
- </script>
 
-  
+        <div id="modelConfirm"
+          class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+          <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+
+            <div class="flex justify-end p-2">
+              <button onclick="closeModal('modelConfirm')" type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="p-6 pt-0 text-center">
+              <svg class="w-10 md:w-20 h-10 md:h-20 text-red-600 mx-auto" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h3 class="text-sm md:text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to close this
+                user?</h3>
+              <a href="#services" onclick="closeModal('modelConfirm')"
+                class="text-white text-sm md:text-xl bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg inline-flex items-center px-2 py-2 text-center mr-2">
+                Close
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <script type="text/javascript">
+    window.openModal = function (modalId) {
+      document.getElementById(modalId).style.display = 'block'
+      document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+    }
+
+    window.closeModal = function (modalId) {
+      document.getElementById(modalId).style.display = 'none'
+      document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+    }
+
+    // Close all modals when press ESC
+    document.onkeydown = function (event) {
+      event = event || window.event;
+      if (event.keyCode === 27) {
+        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+        let modals = document.getElementsByClassName('modal');
+        Array.prototype.slice.call(modals).forEach(i => {
+          i.style.display = 'none'
+        })
+      }
+    };
+  </script>
+
+
 
 </body>
 
